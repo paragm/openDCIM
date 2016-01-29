@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# Frequency
+# Poll every 45 minutes. Change to higher freuqency if you have high nubmber of ESXi Servers
+# OR high number of Virtual Machines.
+#
+# Install:
+# cp poll_pdu_stats /usr/local/bin/
+#
+# Usage:
+#  crontab -e
+#  */5 * * * * /usr/local/bin/poll_pdu_stats
+#
+# See Wiki for more info
+# http://wiki.opendcim.org/wiki/index.php/BackgroundJobs
+
+OPENDCIM='/opt/openDCIM/opendcim'
+
+cd $OPENDCIM
+/usr/bin/php poll_pdu_stats.php

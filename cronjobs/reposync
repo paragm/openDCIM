@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# Frequency:
+# The repository_sync.php script is designed to be run as a cron job, with a frequency of once per day. 
+# If you set it to run every 5 minutes, we will add a firewall rule to the server so that you can 
+# no longer communicate with it. It has already happened once, and I am sure will happen, again. 
+# We have a finite amount of bandwidth on our hosting site - plenty if people adhere to the once a day 
+# rule, but not if dozens of folks request the same information every few minutes. 
+#
+# Copy this file to /etc/cron.daily folder
+#
+
+OPENDCIM='/opt/openDCIM/opendcim'
+
+cd $OPENDCIM
+/usr/bin/php repository_sync.php

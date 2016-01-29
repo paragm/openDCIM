@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# Frequency
+# Poll every 45 minutes. Change to higher freuqency if you have high nubmber of ESXi Servers
+# OR high number of Virtual Machines.
+#
+# Install:
+# cp report_new_installs /etc/cron.daily/
+#
+# See Wiki for more info
+# http://wiki.opendcim.org/wiki/index.php/BackgroundJobs
+
+OPENDCIM='/opt/openDCIM/opendcim'
+
+cd $OPENDCIM
+/usr/bin/php report_new_installs.php
